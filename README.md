@@ -13,16 +13,16 @@
   
 **<h2>Introduction</h2>**
 
-Signals and slots is a language construct introduced in Qt[1] for communication between objects which makes it easy to implement the observer pattern while avoiding boilerplate code. The concept is that GUI widgets can send signals containing event information which can be received by other widgets / controls using special functions known as slots. This is similar to C/C++ function pointers, but signal/slot system ensures the type-correctness of callback arguments.
+Signals and slots is a language construct introduced in Qt for communication between objects which makes it easy to implement the observer pattern while avoiding boilerplate code. The concept is that GUI widgets can send signals containing event information which can be received by other widgets / controls using special functions known as slots. This is similar to C/C++ function pointers, but signal/slot system ensures the type-correctness of callback arguments.
 
 **<h2>1-Traffic light</h2>**
 
-In this exercise, we will use the QTimer which is a class that  provides repetitive and single-shot timers to simulate a traffic light.
+In this exercise, we will use the ##QTimer## which is a class that  provides repetitive and single-shot timers to simulate a ##traffic light##.
 
 ![Screenshot_44](https://user-images.githubusercontent.com/93831197/142742078-1d1857fa-2523-4f4d-9e75-09b42230931f.png)
 
 
-The first function in this exersice is timerEvent in which we change the color of the light each 1s here is the code :
+The first function in this exersice is ##timerEvent()## in which we change the color of the light each 1s here is the code :
                                            
  ```javascript
 void TrafficLight::timerEvent(QTimerEvent *e)
@@ -37,7 +37,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
         redlight->toggle();
     }
 ```
-The seconde function is named KeyPressEvent in which the color is changed when we click on a button in the keybord and here is the code :
+The seconde function is named ##KeyPressEvent## in which the color is changed when we click on a button in the keybord and here is the code :
  ```javascript
 void TrafficLight::keyPressEvent(QKeyEvent *e){
     if(e->key()==Qt::Key_Escape)
@@ -98,7 +98,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
 **<h2>2-Digital Clock</h2>**
   ![Screenshot_43](https://user-images.githubusercontent.com/93831197/142742077-f79e5d11-f321-43ad-9cb9-ca225fd62026.png)
   
-  The Digital Clock exersise shows how to use QLCDNumber to display a number with LCD-like digits and  also demonstrates how QTimer can be used to update a widget at regular intervals.
+  The ##Digital Clock## exersise shows how to use QLCDNumber to display a number with LCD-like digits and  also demonstrates how QTimer can be used to update a widget at regular intervals.
   Here is the implementation
  ```javascript  
   void digitalclock::createWidgets()
