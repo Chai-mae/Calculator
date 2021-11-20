@@ -97,6 +97,9 @@ void TrafficLight::timerEvent(QTimerEvent *e)
 
 **<h2>2-Digital Clock</h2>**
   ![Screenshot_43](https://user-images.githubusercontent.com/93831197/142742077-f79e5d11-f321-43ad-9cb9-ca225fd62026.png)
+  
+  The Digital Clock exersise shows how to use QLCDNumber to display a number with LCD-like digits and  also demonstrates how QTimer can be used to update a widget at regular intervals.
+  Here is the implementation
  ```javascript  
   void digitalclock::createWidgets()
   {
