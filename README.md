@@ -3,8 +3,11 @@
 
 **<h2>Table of contents</h2>**
    [Introduction](#Introduction)
+   
    [1-Traffic light](1-Traffic-light)
+   
    [2-Digital Clock](#2-Digital-Clock)
+   
    [3-Calculator](#3-Calculator)
 
   
