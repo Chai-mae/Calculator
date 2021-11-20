@@ -16,6 +16,8 @@ Signals and slots is a language construct introduced in Qt[1] for communication 
 **<h2>1-Traffic light</h2>**
 
 In this exercise, we will use the QTimer which is a class that  provides repetitive and single-shot timers to simulate a traffic light.
+
+The first function in this exersice is timerEvent in which we change the color of the light each 1s here is the code :
                                            
  ```javascript
 void TrafficLight::timerEvent(QTimerEvent *e)
@@ -29,4 +31,20 @@ void TrafficLight::timerEvent(QTimerEvent *e)
     else{
         redlight->toggle();
     }
+```
+The seconde function is named KeyPressEvent in which the color is changed when we click on a button in the keybord and here is the code :
+ ```javascript
+void TrafficLight::keyPressEvent(QKeyEvent *e){
+    if(e->key()==Qt::Key_Escape)
+       qApp->exit();
+   else if(e->key()==Qt::Key_R){
+      lights[0]->toggle();
+  }
+   else if(e->key()==Qt::Key_Y){
+       lights[1]->toggle();
+   }
+   else if(e->key()==Qt::Key_G){
+       lights[2]->toggle();
+   }
+   }
 ```
