@@ -74,7 +74,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
     }
 ```
 
-The secondde method we add in createwidgets() function  the colors to a vector called lights acoording to it s timer as follows:
+The seconde method we add in createwidgets() function  the colors to a vector called lights acoording to it s timer as follows:
  ```javascript
  lights.append(redlight);
  lights.append(redlight);
@@ -96,4 +96,39 @@ void TrafficLight::timerEvent(QTimerEvent *e)
 ```
 
 **<h2>2-Digital Clock</h2>**
-  
+  ![Screenshot_43](https://user-images.githubusercontent.com/93831197/142742077-f79e5d11-f321-43ad-9cb9-ca225fd62026.png)
+ ```javascript  
+  void digitalclock::createWidgets()
+  {
+    l1=new QLCDNumber();
+    l1->setDigitCount(2);
+    l2=new QLCDNumber();
+     l2->setDigitCount(2);
+    l3=new QLCDNumber();
+     l3->setDigitCount(2);
+
+
+}
+void digitalclock::updateTime(){
+    auto T=QTime::currentTime();
+    l1->display(T.hour());
+    l2->display(T.minute());
+    l3->display(T.second());
+
+}
+void digitalclock::placeWidgets(){
+    QLayout *layout=new QHBoxLayout;
+    layout->addWidget(l1);
+    layout->addWidget(l2);
+    layout->addWidget(l3);
+    setLayout(layout);
+}
+void digitalclock::timerEvent(QTimerEvent *e){
+    updateTime();
+}
+```
+
+**<h2>3-Calculator</h2>**
+
+The goal of this exersise is to use Signals and Slots to simulate a basic calculator behavior. The supported operations are *, +, -, /.
+
