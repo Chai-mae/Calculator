@@ -40,7 +40,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
         redlight->toggle();
     }
 ```
-The seconde function is named KeyPressEvent() in which the color is changed when we click on a button in the keybord and here is the code :
+The second function is named KeyPressEvent() in which the color is changed when we click on a button in the keybord and here is the code :
  ```javascript
 void TrafficLight::keyPressEvent(QKeyEvent *e){
     if(e->key()==Qt::Key_Escape)
@@ -56,7 +56,7 @@ void TrafficLight::keyPressEvent(QKeyEvent *e){
    }
    }
 ```
-The last function it is the same as the first but this time we have different timer and  here is the code
+The last function  is the same as the first but this time we have different timers: 4s for the red ,2s for the green and 1s for the yellowand  here is the code
 
 First method
  ```javascript
@@ -77,7 +77,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
     }
 ```
 
-The seconde method we add in createwidgets() function  the colors to a vector called lights acoording to it s timer as follows:
+The second method we add in constructor function  the colors to a vector called lights according to its timer as follows:
  ```javascript
  lights.append(redlight);
  lights.append(redlight);
