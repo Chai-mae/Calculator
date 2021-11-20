@@ -163,9 +163,14 @@ Pressing one of the calculator's digit buttons will emit the button's clicked() 
 This function will use the Sender method to get the identity of which button was clicked and act accordingly.
 The slot needs to consider two situations in particular. If display contains "0" and the user clicks the 0 button, it would be silly to show "00". And if the calculator is in a state where it is waiting for a new operand, the new digit is the first digit of that new operand; in that case, any result of a previous calculation must be cleared first.
 
-Operation Interaction
+**<h1>Operation Interaction</h1>**
 
-Now we will move on the operation of the four buttons. We will the same mechanism using the sender method. Hence we will define two slots to handle the click on the operations buttons:addOp() slot for + and - multOp() slot * and /
+Now we will move on the operation of the four buttons. We will the same mechanism using the sender method. Hence we will define two slots to handle the click on the operations buttons:
+
+       addOp() slot for + and -
+       
+       multOp() slot * and /
+       
 ```javascript
 void Calculator::addOp(){
 
@@ -212,6 +217,7 @@ If + or - has been clicked earlier, sumSoFar is the left operand and the current
 Finally, we can take care of the operator that was just clicked. Since we don't have the right-hand operand yet, we store the clicked operator in the pendingAddOp variable. We will apply the operation later, when we have a right operand, with sumSoFar as the left operand.
 
 ```javascript
+
 void Calculator::multOp(){
     auto button = dynamic_cast<QPushButton*>(sender());
     operation = new QString{button->text()};
@@ -236,7 +242,7 @@ The multOp() slot is similar to addOp(). We don't need to worry about pending ad
 
 As an enhancement to our calculator we add two buttons which are :
 
-- The reset button which  resets the calculator to its initial state.
+The reset button which  resets the calculator to its initial state.
 ```javascript
 
     void Calculator::resetSlot(){
