@@ -132,6 +132,8 @@ void digitalclock::timerEvent(QTimerEvent *e){
 ```
 
 **<h2>3-Calculator</h2>**
+![Screenshot_42](https://user-images.githubusercontent.com/93831197/142742079-e5a614fe-7db5-4253-bb3b-ab12e127242e.png)
+
 
 The goal of this exersise is to use Signals and Slots to simulate a basic calculator behavior. The supported operations are *, +, -, /.
 
