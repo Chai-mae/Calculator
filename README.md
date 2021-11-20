@@ -163,7 +163,7 @@ Pressing one of the calculator's digit buttons will emit the button's clicked() 
 This function will use the Sender method to get the identity of which button was clicked and act accordingly.
 The slot needs to consider two situations in particular. If display contains "0" and the user clicks the 0 button, it would be silly to show "00". And if the calculator is in a state where it is waiting for a new operand, the new digit is the first digit of that new operand; in that case, any result of a previous calculation must be cleared first.
 
-**<h1>Operation Interaction</h1>**
+**<h4>Operation Interaction</h4>**
 
 Now we will move on the operation of the four buttons. We will the same mechanism using the sender method. Hence we will define two slots to handle the click on the operations buttons:
 
