@@ -17,12 +17,12 @@ Signals and slots is a language construct introduced in Qt for communication bet
 
 **<h2>1-Traffic light</h2>**
 
-In this exercise, we will use the ##QTimer## which is a class that  provides repetitive and single-shot timers to simulate a ##traffic light##.
+In this exercise, we will use the QTimer which is a class that  provides repetitive and single-shot timers to simulate a traffic light.
 
 ![Screenshot_44](https://user-images.githubusercontent.com/93831197/142742078-1d1857fa-2523-4f4d-9e75-09b42230931f.png)
 
 
-The first function in this exersice is ##timerEvent()## in which we change the color of the light each 1s here is the code :
+The first function in this exersice is timerEvent() in which we change the color of the light each 1s here is the code :
                                            
  ```javascript
 void TrafficLight::timerEvent(QTimerEvent *e)
@@ -37,7 +37,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
         redlight->toggle();
     }
 ```
-The seconde function is named ##KeyPressEvent## in which the color is changed when we click on a button in the keybord and here is the code :
+The seconde function is named KeyPressEvent() in which the color is changed when we click on a button in the keybord and here is the code :
  ```javascript
 void TrafficLight::keyPressEvent(QKeyEvent *e){
     if(e->key()==Qt::Key_Escape)
@@ -98,7 +98,7 @@ void TrafficLight::timerEvent(QTimerEvent *e)
 **<h2>2-Digital Clock</h2>**
   ![Screenshot_43](https://user-images.githubusercontent.com/93831197/142742077-f79e5d11-f321-43ad-9cb9-ca225fd62026.png)
   
-  The ##Digital Clock## exersise shows how to use QLCDNumber to display a number with LCD-like digits and  also demonstrates how QTimer can be used to update a widget at regular intervals.
+  The Digital Clock exersise shows how to use QLCDNumber to display a number with LCD-like digits and  also demonstrates how QTimer can be used to update a widget at regular intervals.
   Here is the implementation
  ```javascript  
   void digitalclock::createWidgets()
@@ -136,4 +136,26 @@ void digitalclock::timerEvent(QTimerEvent *e){
 
 
 The goal of this exersise is to use Signals and Slots to simulate a basic calculator behavior. The supported operations are *, +, -, /.
+The Calculator class provides a simple calculator widget. It inherits from QWidget and has several private slots associated with the calculator's buttons.
 
+
+Our first step is to respond to each digit click
+```javascript 
+void Calculator::newDigit()
+{
+    button = dynamic_cast<QPushButton *>(sender());
+    int digitValue = button->text().toInt();
+    if (disp->intValue() == 0 && digitValue == 0)
+        return;
+
+    if (waitingfordigit) {
+        disp->display("0");
+    waitingfordigit= false;
+    }
+
+    disp->display(disp->intValue()*10 + digitValue);
+}
+```
+Pressing one of the calculator's digit buttons will emit the button's clicked() signal, which will trigger the newDigit() slot.
+This function will use the Sender method to get the identity of which button was clicked and act accordingly.
+The slot needs to consider two situations in particular. If display contains "0" and the user clicks the 0 button, it would be silly to show "00". And if the calculator is in a state where it is waiting for a new operand, the new digit is the first digit of that new operand; in that case, any result of a previous calculation must be cleared first.
