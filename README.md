@@ -1,5 +1,5 @@
 
-# Signals and Slots #
+# Signals & Slots #
 ![WhatsApp Image 2021-11-20 at 13 49 44](https://user-images.githubusercontent.com/93831197/142741729-13f22b32-d29b-4462-87a5-28121db49848.jpeg)
 
 
